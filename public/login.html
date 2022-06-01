@@ -12,6 +12,9 @@
 	<!--[if IE 7]>
         <link href="css/ie7.css" rel="stylesheet" type="text/css" />  
 	<![endif]-->
+    <script language="javascript" type="text/javascript">
+        var holderBorder = RUZEE.ShadedBorder.create({ corner:20, border:2 });
+      </script>
 </head>
 
 <body>
@@ -34,23 +37,31 @@
 				        <div class="content">
 							<div class="about">
 							     <h2>Login</h2>
-                                 
-                                 <form action="#" method="post">
+                                 <div id="contentLogin">
+                                 <div id="innerholder">
+                                    <h3><span></span><hr></h3>
+                                 <form action="#" method="post"> 
                                     <div>
                                         <div id="label"><b>User Name:</b></div>
                                         <div class="roundedfield" >  
                                             <input name="address" type="text"/>
                                         </div>
-                                    </div>
+                                    </div> <br>
                                     <div>
                                         <div id="label"><b>Password:</b></div>
                                         <div class="roundedfield" > 
                                             <input type="password" name="address" />
                                         </div>    
-                                    </div> <br><br>
+                                    </div> <br>
                                     <input type="submit" value="Login" id="loginbutton" name="loginbutton"/>
                                 </form>
-                                 
+                                </div>
+                            </div>
+                            <script language="javascript" type="text/javascript">  
+                                holderBorder.render('content');
+                            </script>
+                            
+                                 <!--
                                  <ul>
 									<li>
 										<h2><a href="about.html">Welcome to Pets For You</a></h2>
@@ -90,14 +101,14 @@ Our main vision is that all owners who own any animal will be able to enjoy lots
 											replace it with your own About content.
 										</p>
 									</li>
-								 </ul>						
+								 </ul>	-->					
 							</div>
 						</div>
 						
 					    <div id="sidebar">
 						
 						
-						        <div class="featured">
+						        <div class="featured"><!--
 								        <h2>Featured Topic</h2>
 								        <ul>
 											<li>
@@ -153,26 +164,27 @@ Our main vision is that all owners who own any animal will be able to enjoy lots
 												<li><a href="index.html">Pet Emergency Kit</a> <a class="more" href="index.html">see all</a></li>
 											 </ul>
 										</div>
-									 </div>
+									 </div>-->
 									</div>
 								</div>
 								
 					    </div>
-				   </div>
-				   
+				   </div> <br><br><br>
+				   <!--
 				   <div class="featured">
 				        <ul>
 							<li><a href="index.html"><img src="images/organic-and-chemical-free.jpg" width="300" height="90" alt="Pet Shop" title="Pet Shop" ></a></li>
 							<li><a href="index.html"><img src="images/good-food.jpg" width="300" height="90" alt="Pet Shop" title="Pet Shop" ></a></li>
 							<li class="last"><a href="index.html"><img src="images/pet-grooming.jpg" width="300" height="90" alt="Pet Shop" title="Pet Shop" ></a></li>
-						</ul>
+						
+                        </ul>-->
 				        
 				   </div>
 				
 			
 			</div>
         
-			<div id="footer">
+			<div id="footer"><!--
 			        <div class="section">
 						<ul>
 							<li>
@@ -205,7 +217,7 @@ Our main vision is that all owners who own any animal will be able to enjoy lots
 								<img src="images/pet-lover.jpg" width="240" height="186" alt="Pet Shop" title="Pet Shop">
 							</li>	
 						</ul>
-					</div>  
+					</div>  -->
 					<div id="footnote">
 						<div class="section">
 						   &copy; 2011 <a href="index.html">Petshop</a>. All Rights Reserved.
