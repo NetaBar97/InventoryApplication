@@ -40,21 +40,13 @@
                                  <div id="contentLogin">
                                  <div id="innerholder">
                                     <h3><span></span><hr></h3>
-                                 <form action="#" method="post"> 
-                                    <div>
-                                        <div id="label"><b>User Name:</b></div>
-                                        <div class="roundedfield" >  
-                                            <input name="address" type="text"/>
-                                        </div>
-                                    </div> <br>
-                                    <div>
-                                        <div id="label"><b>Password:</b></div>
-                                        <div class="roundedfield" > 
-                                            <input type="password" name="address" />
-                                        </div>    
-                                    </div> <br>
-                                    <input type="submit" value="Login" id="loginbutton" name="loginbutton"/>
-                                </form>
+									<form action="/login" method="POST">
+										<input type="text" name="username"
+											placeholder="username">
+										<input type="password" name="password"
+											placeholder="password">
+										<button type="submit">login</button>
+									</form>
                                 </div>
                             </div>
                             <script language="javascript" type="text/javascript">  

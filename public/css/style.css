@@ -1244,7 +1244,44 @@
 #innerholder h3 span{background:url(../images/logo.jpg) no-repeat; height:50px; display:block;}
 #innerholder .a {padding:4px;}
 #innerholder .a, #innerholder .a .sb-inner {padding:30px; height:200px;}
-#loginbutton{background:#999; color:#fff;cursor:pointer;padding:5px 10px;-moz-border-radius:6px;-webkit-border-radius:4px;width:150px;}
-#contentLogin{padding:5px 0; min-width: 450px; max-width:500px;}
 #label {padding-bottom:5px; text-align:left;}
 .roundedfield{background:  url(../images/rounded.gif) no-repeat left top; height:50px;padding: 4px;text-align:left;}
+
+.login {
+    width: 382px;
+    overflow: hidden;
+    margin: auto;
+    margin: 20 0 0 450px;
+    padding: 80px;
+    background: #b2c4c0;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+h2{  
+    text-align: center;  
+    color: #277582;  
+    padding: 20px;  
+}
+#Uname{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+}  
+#Pass{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 3px;  
+    padding-left: 8px;  
+      
+}  
+#log{  
+    width: 300px;  
+    height: 30px;  
+    border: none;  
+    border-radius: 17px;  
+    padding-left: 7px;  
+    color: blue;  
+}  
