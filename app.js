@@ -17,11 +17,11 @@ async function run() {
   try {
     await client.connect();
     const database = client.db('webproject');
-    const movies = database.collection('users');
+    const users = database.collection('users');
     // Query for a movie that has the title 'Back to the Future'
     const query = { username: 'admin' };
-    const movie = await movies.findOne(query);
-    console.log(movie);
+    const user = await movies.findOne(query);
+    console.log(user);
   } finally {
     // Ensures that the client will close when you finish/error
     await client.close();
@@ -31,20 +31,8 @@ async function run() {
 run().catch(console.dir);
 
 app.post("/login",(req,res) => {
-   // console.log(req.body.username);
-   console.log("Trying to login");
-   const user = await User.findOne({
-    username: req.body.username,
-    password: req.body.password,
-});
-
-if (user) {
-    res.json({ user: user.username, id: user._id });
-} else {
-    res.status(403).json({
-        error: 'Invalid username or password',
-    });
-}
+    console.log(req.body.username);
+  
 
 })
 
