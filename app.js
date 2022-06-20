@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 const { MongoClient } = require("mongodb");
 const bodyParser = require('body-parser');
-
+const webproject=require('./models/dbAdapterConnect')
 
 app.use(express.static('public'))
 
@@ -20,7 +20,7 @@ async function run() {
     const users = database.collection('users');
     // Query for a movie that has the title 'Back to the Future'
     const query = { username: 'admin' };
-    const user = await movies.findOne(query);
+    const user = await users.findOne(query);
     console.log(user);
   } finally {
     // Ensures that the client will close when you finish/error
@@ -31,9 +31,18 @@ async function run() {
 run().catch(console.dir);
 
 app.post("/login",(req,res) => {
-    console.log(req.body.username);
-  
-
+  async function loginUser()
+  {
+    await client.connect();
+    const database = client.db('webproject');
+    const users = database.collection('users');
+    const query = { username: req.body.username };
+    const user = await users.findOne(query);
+    if(user != null && req.body.password == user.password)
+     return res.redirect("/adminpanel.html")
+    return res.redirect("/login.html")
+  }
+  loginUser();
 })
 
 /*
@@ -44,4 +53,12 @@ app.get('/', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
+})
+
+app.get('/getProduct', (req, res) => {
+
+  async function myProduct() {
+    await webproject.getProductsCollection().then((result) => { res.send(result)});
+  }
+  myProduct();
 })
