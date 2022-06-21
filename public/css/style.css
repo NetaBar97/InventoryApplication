@@ -52,7 +52,7 @@
   #header ul.navigation li a{
     text-decoration:none;
 	color:#2c1d00;
-	font-family:"Myriad Pro";
+	font-family:sora;
 	font-size:14px;
 	font-weight:bold;
 	display:inline-block; 
@@ -102,7 +102,7 @@
   
   #body #content .content h2{
 	
-	font-family: "Myriad Pro";
+	font-family: sora;
     margin: 80px 0 0 30px;
   }
   
@@ -129,7 +129,7 @@
   }    
   #body #content .content ul li span a{
     color: #7F7154;
-    font-family: "Myriad Pro";
+    font-family:sora;
     font-size: 14px;
 	text-decoration:none;
   }
@@ -169,14 +169,14 @@
   }
    
   #body #content .content ul li h2{
-    font-family:"Myriad Pro";
+    font-family:sora;
     font-size:20px;
 	margin:0;
 	
 	}
    
   #body #content .content ul li  p{
-    font-family:"Myriad Pro";
+    font-family:sora;
 	font-size:14px;
 	text-align:justify; 
 	color:#7f7154;
@@ -233,7 +233,7 @@
 	 background-repeat:repeat-y;
 	 margin:-10px 0 8px 0;
 	 padding: 0 10px 0 48px;
-	 font-family:"Myriad Pro";
+	 font-family:sora;
 	 font-size:14px;
 	}
 	
@@ -250,7 +250,7 @@
 	   width:110px;
 	   text-align:center;
 	   color:#ffffff;
-	   font-family:"Myriad Pro";
+	   font-family:sora;
 	   font-size:18px;
 	}
 	#body #content .content ul.articles li div h2{
@@ -278,7 +278,7 @@
 	    margin-bottom:50px;
 		color:#7F7154;
 		text-decoration:none;
-		font-family:"Myriad pro";
+		font-family:sora;
 		margin-top:25px;
 	}
 	
@@ -297,7 +297,7 @@
 	  margin-top:25px;
 	  color:#7F7154;
 	  text-decoration:none;
-	  font-family:"Myriad pro";
+	  font-family:sora;
 	}
 	#body #content .content div a.old:hover{
 	  color:#000000;
@@ -379,7 +379,7 @@
 	 border:0;
 	 margin:5px 3px 5px 10px;
 	 font-size:14px;
-	 font-family:"Myriad Pro";
+	 font-family:sora;
 	 color:#7f7154;
 	 
   }
@@ -397,7 +397,7 @@
   
   #body #content  .search label{
 	 font-size:14px;
-	 font-family:"Myriad Pro";
+	 font-family:sora;
 	 color:#ffffff;
 	} 
    #body #content .search label input{
@@ -421,7 +421,7 @@
   #body #content .content .about h2{
     margin:80px 0 0 30px;
 	
-    font-family: "Myriad Pro";
+    font-family: sora;
   }
   
   #body #content .content .about ul{
@@ -443,7 +443,7 @@
   #body #content .content .about ul li h2 a{
     color:#ff9506;
 	font-size:24	px;
-	font-family: "Myriad Pro";
+	font-family: sora;
 	text-decoration:none;
   } 
   
@@ -453,7 +453,7 @@
   
   #body #content .content .about ul li p{
     color: #7F7154;
-    font-family: "Myriad Pro";
+    font-family:sora;
     font-size: 14px;
     text-align: justify;
   }	
@@ -478,7 +478,7 @@
   #body #content .content div p{
     margin: 10px 0 0 30px;
 	padding:0 15px 0 0;
-	font-family: "Myriad Pro";
+	font-family: sora;
 	font-size:14px;
 	line-height:25px;
 	color:#7F7154;
@@ -492,7 +492,7 @@
    }
    
   #body #content .content ul.connect{
-    font-family: "Myriad Pro";
+    font-family: sora;
     margin: 50px 0 0 30px;
   }
   
@@ -548,7 +548,7 @@
 	 height:30px;
 	 line-height:30px;
 	 text-align:center;
-	 font-family:"Myriad Pro";
+	 font-family:sora;
 	 color:#ffffff;
 	 font-weight:normal;
    }
@@ -566,7 +566,7 @@
    #body #content .content .paging a{
      text-decoration:none; 
 	 font-size:24px;
-	 font-family:"Myriad Pro";
+	 font-family:sora;
 	 color:#ffffff;
 	 text-align:center;
 	 background:url("../images/buttons.gif");
@@ -638,7 +638,7 @@
    #body #content #sidebar div#section div div h2 {
      margin-left:25px;
 	 font-weight:normal;
-	 font-family:"Myriad Pro";
+	 font-family:sora;
 	 font-size:24px;
    }
    
@@ -659,7 +659,7 @@
      text-decoration:none;
 	 color:#7F7154;
 	 font-size:14px;
-	 font-family:"Myriad Pro";
+	 font-family:sora;
    }
    
    
@@ -678,7 +678,7 @@
 	 line-height:50px;
 	  color:#7F7154;
 	 font-size:18px;
-	 font-family:"Myriad Pro";	
+	 font-family:sora;	
 	 
 	   background:url("../images/icons.gif");
 	  
@@ -766,7 +766,7 @@
 	 border:0;
 	 margin:5px 3px 5px 10px;
 	 font-size:14px;
-	 font-family:"Myriad Pro";
+	 font-family:sora;
 	 color:#7f7154;
 	 
   }
@@ -784,7 +784,7 @@
   
   #body #content #sidebar .search label{
 	 font-size:14px;
-	 font-family:"Myriad Pro";
+	 font-family:sora;
 	 color:#ffffff;
 	} 
    #body #content #sidebar .search label input{
@@ -852,7 +852,7 @@
 	  color:#7f7154;
 	  font-size:14px;
 	  margin:0 0 0 10px;
-	  font-family:"Myriad Pro";
+	  font-family:sora;
 	  width:210px;
 	  /*
 	  _width:200px;
@@ -913,7 +913,7 @@
 	  text-align:center;
 	  line-height:30px;
 	  display:inline-block;
-	  font-family:"Myriad Pro";
+	  font-family:sora;
 	  font-size:14px;
 	  color:#000000;
 	  font-weight:bold;
@@ -939,7 +939,7 @@
 	}
 	
 	#body #content #sidebar .featured  h2{
-	   font-family:"Myriad Pro";
+	   font-family:sora;
 	  font-size:28px;
 	  color:#000000; 
 	  font-weight:normal;
@@ -964,7 +964,7 @@
 	}
 	
 	#body #content #sidebar .featured ul li h2 a{
-	 font-family:"Myriad Pro";
+	 font-family:sora;
 	  font-size:20px;
 	  color:#000000;
 	  font-weight:bold;
@@ -984,7 +984,7 @@
 	
 	#body #content #sidebar .featured ul li  p{
 	  color:#7F7154;
-	   font-family:"Myriad Pro";
+	   font-family:sora;
 	  font-size:14px;
 	  line-height:25px;
 	  
@@ -1019,7 +1019,7 @@
 	
 	#body #content #sidebar .connect h2{
 	  color:#ff9e01;
-	  font-family:"Myriad Pro";
+	  font-family:sora;
 	  font-size:28px;
 	  font-style:Italic;
 	  margin:80px 0 0 0;
@@ -1185,7 +1185,7 @@
    }
    
    #footer .section ul li h2 a{
-       font-family:"Myriad Pro", Arial;
+       font-family:sora, Arial;
 	   font-size:16px;
 	   color:#bffb05;
 	   text-decoration:none;
@@ -1197,7 +1197,7 @@
 	  top:60px;
 	  padding: 0 10px 0 15px; 
 	  z-index:10;
-	  font-family:"Myriad Pro";
+	  font-family: sora;
 	  font-size:14px;
 	  color:#ffffff;
 	  line-height:20px;
@@ -1227,7 +1227,7 @@
 	   height:50px;
 	   text-align:center;
 	   line-height:50px;
-	   font-family:"Myriad Pro";
+	   font-family: sora;
 	   font-size:13px;
 		
    }
@@ -1291,7 +1291,7 @@ h2{
 	border-collapse: collapse;
 	margin: 25px 0;
 	font-size: 0.9em;
-	font-family: sans-serif;
+	font-family: sora;
 	min-width: 400px;
 	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 	text-align: center;
@@ -1327,3 +1327,17 @@ h2{
 	color: #009879;
   }
   
+  .adminButton {
+	padding: 10px;
+    background-color: #ffa200;
+    display: inline-block;
+    border-radius: 5px;
+    color: white;
+    font-family: sora;
+  }
+
+  #adminButtons {
+	width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+  }

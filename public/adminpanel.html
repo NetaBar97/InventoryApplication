@@ -3,8 +3,11 @@
 <html>
 
 <head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
 	<title>Pet Shop</title>
-	<meta  charset=iso-8859-1" />
+	<meta  charset="iso-8859-1" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
 
 	<script>
@@ -13,18 +16,18 @@
                 .then(response => response.text())
                 .then(data => {
                     var productTypes = JSON.parse(data);
-                    var myTables = "";
-                    productTypes.forEach(element => {
-
-                        myTables += `
-                            <table class="styled-table">
+                    var myTables = `<table class="styled-table">
                                 <tr>
                                     <th>Product Name</th>
                                     <th>Price</th>
 									<th>Quantity</th>
 									<th>Category</th>
 									<th>Image</th>
-                                </tr>
+									<th>Delete</th>
+                                </tr>`;
+                    productTypes.forEach(element => {
+
+                        myTables += `
                                 <tr>
                                     <td>${element.name}</td>
                                     <td>${element.price}</td>
@@ -33,13 +36,17 @@
                                     <td>
                                         <img src="${element.img}" alt="${element.image}" width="150" height="120">      
                                     </td>
+									<td><div class='deleteProduct' productId='${element._id}'>X</div></td>
                                 </tr>
-                                </table>
                             `
-
                     });
-                    document.getElementById("myData").innerHTML = myTables
-				
+					myTables+=`</table>`;
+                    document.getElementById("myData").innerHTML = myTables;
+					document.getElementsByClassName('deleteProduct')[0]
+        				.addEventListener('click', function (event) {
+							alert("ljfdgdkl");
+       				 });
+					
                 }
                 )
         }
@@ -60,6 +67,15 @@
 	           		<a href="index.html" id="logo"><img src="images/logo.gif" width="310" height="114" alt="" title=""></a>
 			</div>
 			<br><br><br>
+			<div id="adminButtons">
+				<div class="adminButton">
+					Add Product
+				</div>
+				<div class="adminButton">
+					Add Product
+				</div>
+
+			</div>
 			<div id="myData"></div>
 	
 </body>
