@@ -1337,7 +1337,106 @@ h2{
   }
 
   #adminButtons {
-	width: 75%;
+	width: 40%;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  #userButtons {
+	width: 10%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+
+  .button-4 {
+    appearance: none;
+    background-color: #ffa600;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    box-shadow: rgb(27 31 35 / 4%) 0 1px 0, rgb(255 255 255 / 25%) 0 1px 0 inset;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: sora;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    padding: 6px 16px;
+    position: relative;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+  
+
+  .button-4:hover {
+	background-color: #de9b1e;
+	box-shadow: rgba(240, 243, 246, 0.2) 0 1px 0 inset;
+	transition: none 0s;
+  }
+  
+
+  .button-4:focus {
+	outline: 1px transparent;
+  }
+  
+  .button-4:before {
+	display: none;
+  }
+  
+  .button-4:-webkit-details-marker {
+	display: none;
+  }
+
+  .buttonUser {
+    appearance: none;
+    background-color: #ffa600;
+    border: 1px solid rgba(27, 31, 35, 0.15);
+    border-radius: 6px;
+    box-shadow: rgb(27 31 35 / 4%) 0 1px 0, rgb(255 255 255 / 25%) 0 1px 0 inset;
+    box-sizing: border-box;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: sora;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    list-style: none;
+    padding: 10px 40px;
+    position: relative;
+    transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+    word-wrap: break-word;
+}
+
+
+.buttonUser:hover {
+	background-color: #de9b1e;
+	box-shadow: rgba(240, 243, 246, 0.2) 0 1px 0 inset;
+	transition: none 0s;
+  }
+  
+
+  .buttonUser:focus {
+	outline: 1px transparent;
+  }
+  
+  .buttonUser:before {
+	display: none;
+  }
+  
+  .buttonUser:-webkit-details-marker {
+	display: none;
   }

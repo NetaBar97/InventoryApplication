@@ -13,42 +13,30 @@
 
 	<script>
         function showTable() {
-            fetch('/getProduct')
+            fetch('/getUser')
                 .then(response => response.text())
                 .then(data => {
-                    var productTypes = JSON.parse(data);
+                    var userTypes = JSON.parse(data);
                     var myTables = `<table class="styled-table">
                                 <tr>
-                                    <th>Product Name</th>
-                                    <th>Price</th>
-									<th>Quantity</th>
-									<th>Minimum Quantity</th>
-									<th>Category</th>
-									<th>Image</th>
-									<th>Edit</th>
+                                    <th>Username</th>
+									<th>Type</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>`;
-                    productTypes.forEach(element => {
+                    userTypes.forEach(element => {
 
                         myTables += `
                                 <tr>
-                                    <td>${element.name}</td>
-                                    <td>${element.price}</td>
-									<td>${element.quantity}</td>
-									<td>${element.minQuantity}</td>
-									<td>${element.category}</td>
-                                    <td>
-                                        <img src="${element.img}" alt="${element.image}" width="150" height="120">      
-                                    </td>
-									<td><div productId='${element._id}'><i style="cursor:pointer;" class="fa fa-light fa-pen"></i></div></td>
+                                    <td>${element.username}</td>
+                                    <td>${element.type}</td>
+                                    <td><div userId='${element._id}'><i style="cursor:pointer;" class="fa fa-light fa-pen"></i></div></td>
+                                    <td><div userId='${element._id}'><i style="cursor:pointer;" <i class="fa-solid fa-trash-can"></i></div></td>
                                 </tr>
                             `
                     });
 					myTables+=`</table>`;
                     document.getElementById("myData").innerHTML = myTables;
-					document.getElementsByClassName('deleteProduct')[0]
-        				.addEventListener('click', function (event) {
-							alert("ljfdgdkl");
-       				 });
 					
                 }
                 )
@@ -71,24 +59,20 @@
 			</div>
 			<br><br><br>
 			<div id="adminButtons">
-				<div  class="button-4" role="button" class="adminButton">
-					Add Product
-				</div>
-				
-				<div  class="button-4" role="button" class="adminButton">
-					Add Category
+
+                <div  class="button-4" role="button" class="adminButton">
+					Add User
 				</div>
 
+                <a href="adminpanel.html">
 				<div  class="button-4" role="button" class="adminButton">
-					Filter
+					Back to Inventory
 				</div>
+                </a>
 
-				<a href="permissions.html">
-				<div class="button-4" role="button" class="adminButton">
-					Users
-				</div>
-				</a>
+              
 
+			
 			</div>
 			<div id="myData"></div>
 		

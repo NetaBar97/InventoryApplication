@@ -17,6 +17,20 @@ async function getProductsCollection(){
   }
   exports.getProductsCollection = getProductsCollection;
 
+  async function getUsersCollection(){  
+    var client = new MongoClient(uri, {useUnifiedTopology: true});
+    await client.connect();
+    const database = client.db('webproject');
+    const users = database.collection('users');
+    const query = {  };
+    let res = await users.find(query).toArray();
+    console.log(res);
+   
+    return res;
+    
+  }
+  exports.getUsersCollection = getUsersCollection;
+
   /*
   async function saveProduct(details){  
     var client = new MongoClient(uri, {useUnifiedTopology: true});

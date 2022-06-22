@@ -18,12 +18,10 @@ async function run() {
     await client.connect();
     const database = client.db('webproject');
     const users = database.collection('users');
-    // Query for a movie that has the title 'Back to the Future'
     const query = { username: 'admin' };
     const user = await users.findOne(query);
     console.log(user);
   } finally {
-    // Ensures that the client will close when you finish/error
     await client.close();
   }
 }
@@ -38,9 +36,32 @@ app.post("/login",(req,res) => {
     const users = database.collection('users');
     const query = { username: req.body.username };
     const user = await users.findOne(query);
-    if(user != null && req.body.password == user.password)
-     return res.redirect("/adminpanel.html")
-    return res.redirect("/login.html")
+
+    if (user != null && req.body.password == user.password) {
+      if (req.body.username == 'admin')
+        return res.redirect("/adminpanel.html");
+      return res.redirect("/userpanel.html");
+    }
+    else return res.redirect("/login.html");
+    
+/*
+    if (user != null && req.body.password == user.password && req.body.type=="admin") 
+        return res.redirect("/adminpanel.html");
+    else if (user != null && req.body.password == user.password && req.body.type=="user")
+      return res.redirect("/userpanel.html");
+    else return res.redirect("/login.html");
+*/
+    /*
+    if(user != null && req.body.type == 'admin') 
+      return res.redirect("/adminpanel.html");
+    else if (user != null && req.body.password == user.password) 
+      return res.redirect("/userpanel.html");
+    return res.redirect("/login.html");
+    */
+
+  //  if(user != null && req.body.password == user.password) 
+   //  return res.redirect("/adminpanel.html");
+ //  return res.redirect("/login.html"); 
   }
   loginUser();
 })
@@ -61,4 +82,12 @@ app.get('/getProduct', (req, res) => {
     await webproject.getProductsCollection().then((result) => { res.send(result)});
   }
   myProduct();
+})
+
+app.get('/getUser', (req, res) => {
+
+  async function myUser() {
+    await webproject.getUsersCollection().then((result) => { res.send(result)});
+  }
+  myUser();
 })
