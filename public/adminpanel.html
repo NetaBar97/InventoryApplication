@@ -10,6 +10,7 @@
 	<title>Pet Shop</title>
 	<meta  charset="iso-8859-1" />
 	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	
 
 	<script>
         function showTable() {
@@ -71,27 +72,98 @@
 			</div>
 			<br><br><br>
 			<div id="adminButtons">
-				<div  class="button-4" role="button" class="adminButton">
+				<div id="addBtn" class="button-4" role="button" class="adminButton">
 					Add Product
 				</div>
-				
-				<div  class="button-4" role="button" class="adminButton">
-					Add Category
-				</div>
 
-				<div  class="button-4" role="button" class="adminButton">
+
+				<div id="filterBtn" class="button-4" role="button" class="adminButton">
 					Filter
 				</div>
 
 				<a href="permissions.html">
 				<div class="button-4" role="button" class="adminButton">
-					Users
+					Manage Users
 				</div>
 				</a>
 
 			</div>
 			<div id="myData"></div>
 		
+
+		<!-- The Modal -->
+		<div id="myModal" class="modal">
+
+  		<!-- Modal content -->
+  		<div class="modal-content">
+    		<span class="close">&times;</span>
+    		<p style="text-align:center">Add Product</p>
+			<form>
+    
+				<div class="group">      
+				  <input type="text" required>
+				  <span class="highlight"></span>
+				  <span class="bar"></span>
+				  <label>Name</label>
+				</div>
+				  
+				<div class="group">      
+				  <input type="text" required>
+				  <span class="highlight"></span>
+				  <span class="bar"></span>
+				  <label>Price</label>
+				</div>
+
+				<div class="group">      
+					<input type="text" required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>Quantity</label>
+				  </div>
+
+				  <div class="group">      
+					<input type="text" required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>Minimum Quantity</label>
+				  </div>
+
+				  <div class="group">      
+					<input type="text" required>
+					<span class="highlight"></span>
+					<span class="bar"></span>
+					<label>Image Url</label>
+				  </div>
+				  <div class="group">
+					  <label>Category</label><br><br>
+				  	<select style="font-family:sora; font-size:14px;" name="subject" id="subject">
+					<option value="" selected="selected">Beds</option>
+					<option value="" selected="selected">Food</option>
+					<option value="" selected="selected">Grooming</option>
+					<option value="" selected="selected">Toys</option>
+				  	</select>
+				  </div>
+				  <div class="button-4" role="button" class="adminButton">
+					Add
+				</div>
+			  </form>
+ 		</div>
+
+<!-- The Modal -->
+<div id="myModal2" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p>Some text in the Modal..</p>
+  </div>
+
+</div>
+
+		
+
+</div>
+<script src="modal.js"></script>
 </body>
 
 </html>
