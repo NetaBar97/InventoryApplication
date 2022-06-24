@@ -69,6 +69,12 @@ app.get("/update-quantity/:productId/:newQuantity", async (req, res) => {
   res.status(200).send();
 });
 
+app.get("/update-permission/:userId/:newPermission", async (req, res) => {
+  const { userId, newPermission } = req.params;
+  await UserModel.findByIdAndUpdate(userId, { type: newPermission });
+  res.status(200).send();
+});
+
 (async function () {
   try {
     await mongoose.connect(uri, {

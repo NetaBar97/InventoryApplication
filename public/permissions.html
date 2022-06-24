@@ -22,25 +22,37 @@
           .then((response) => response.text())
           .then((data) => {
             var userTypes = JSON.parse(data);
-            var myTables = `<table class="styled-table">
-                                <tr>
-                                    <th>Username</th>
-									<th>Type</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
-                                </tr>`;
+            var myTables = "";
             userTypes.forEach((element) => {
               myTables += `
                                 <tr>
                                     <td>${element.username}</td>
                                     <td>${element.type}</td>
-                                    <td><div userId='${element._id}'><i style="cursor:pointer;" class="fa fa-light fa-pen"></i></div></td>
+                                    <td><div id="edit-permission" userId='${element._id}'><i style="cursor:pointer;" class="fa fa-light fa-pen"></i></div></td>
                                     <td><div userId='${element._id}'><i style="cursor:pointer;" <i class="fa-solid fa-trash-can"></i></div></td>
                                 </tr>
                             `;
             });
-            myTables += `</table>`;
-            document.getElementById("myData").innerHTML = myTables;
+            document.querySelector("tbody").innerHTML = myTables;
+
+            document.querySelectorAll("#edit-permission").forEach((element) => {
+              element.addEventListener("click", async () => {
+                const permission = prompt(
+                  "Please write the new permission (admin/user)"
+                );
+                const userId = element.getAttribute("userId");
+                try {
+                  const response = await fetch(
+                    `/update-permission/${userId}/${permission}`
+                  );
+                  if (response.status == 200) {
+                    location.reload();
+                  }
+                } catch (err) {
+                  alert("Error ");
+                }
+              });
+            });
           });
       }
     </script>
@@ -61,7 +73,9 @@
     </div>
     <br /><br /><br />
     <div id="adminButtons">
-      <div id="addUser" class="button-4" role="button" class="adminButton">Add User</div>
+      <div id="addUser" class="button-4" role="button" class="adminButton">
+        Add User
+      </div>
 
       <a href="adminpanel.html">
         <div class="button-4" role="button" class="adminButton">
@@ -69,7 +83,19 @@
         </div>
       </a>
     </div>
-    <div id="myData"></div>
+    <div id="myData">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Type</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
 
     <!-- The Modal -->
     <div id="addUserModal" class="modal">

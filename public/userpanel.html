@@ -22,6 +22,30 @@
           .then((response) => response.text())
           .then((data) => {
             var productTypes = JSON.parse(data);
+            var myTables = "";
+            productTypes.forEach((product) => {
+              myTables += `
+                                   <tr category="${product.category}" quantity="${product.quantity}">
+                                       <td>${product.name}</td>
+                                       <td>${product.price}</td>
+      						<td>${product.quantity}</td>
+      						<td>${product.minQuantity}</td>
+      						<td>${product.category}</td>
+                                       <td>
+                                           <img src="${product.img}" alt="${product.image}" width="150" height="120">
+                                       </td>
+      						
+                                   </tr>
+                               `;
+            });
+
+            document.querySelector("tbody").innerHTML = myTables;
+          });
+        /*
+        fetch("/getProduct")
+          .then((response) => response.text())
+          .then((data) => {
+            var productTypes = JSON.parse(data);
             var myTables = `<table class="styled-table">
                                 <tr>
                                     <th>Product Name</th>
@@ -49,12 +73,7 @@
             });
             myTables += `</table>`;
             document.getElementById("myData").innerHTML = myTables;
-            document
-              .getElementsByClassName("deleteProduct")[0]
-              .addEventListener("click", function (event) {
-                alert("ljfdgdkl");
-              });
-          });
+          });*/
       }
     </script>
 
@@ -74,10 +93,60 @@
     </div>
     <br /><br /><br />
     <div id="userButtons">
-      <div class="buttonUser" id="buttonUser" role="button" class="adminButton">
+      <div
+        id="filterBtn"
+        class="buttonUser"
+        id="buttonUser"
+        role="button"
+        class="adminButton"
+      >
         Filter
       </div>
     </div>
-    <div id="myData"></div>
+    <div id="myData">
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Product Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Minimum Quantity</th>
+            <th>Category</th>
+            <th>Image</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div id="filterModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <!--FOR THE FILTER BUTTON-->
+        <div class="group">
+          <label>Category</label><br /><br />
+          <select
+            style="font-family: sora; font-size: 14px"
+            name="subject"
+            id="category-filter"
+          >
+            <option value="Toys" selected="selected">Toys</option>
+            <option value="Beds" selected="selected">Beds</option>
+            <option value="Food" selected="selected">Food</option>
+            <option value="Grooming" selected="selected">Grooming</option>
+            <option value="all" selected="selected">Show All</option>
+          </select>
+        </div>
+
+        <input style="margin-left: -125px" type="checkbox" />
+        <p>Show Missing Products</p>
+
+        <div id="filter-now" class="button-4" role="button" class="adminButton">
+          Filter
+        </div>
+      </div>
+    </div>
+    <script src="filterUserModal.js" defer></script>
   </body>
 </html>
