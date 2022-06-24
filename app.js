@@ -1,70 +1,33 @@
-const express = require('express')
-const app = express()
-const port = 3000
-const { MongoClient } = require("mongodb");
-const bodyParser = require('body-parser');
-const webproject=require('./models/dbAdapterConnect')
+const express = require("express");
+const app = express();
+const port = 3000;
+const bodyParser = require("body-parser");
+const ProductModel = require("./models/productModel");
+const mongoose = require("mongoose");
+const UserModel = require("./models/userModel");
 
-app.use(express.static('public'))
+app.use(express.static("public"));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const uri =
+  "mongodb+srv://admin:admin12345@webproject.dgji0qe.mongodb.net/?retryWrites=true&w=majority";
 
-const uri =  "mongodb+srv://admin:admin12345@webproject.dgji0qe.mongodb.net/?retryWrites=true&w=majority";
-const client = new MongoClient(uri);
-async function run() {
-  try {
-    await client.connect();
-    const database = client.db('webproject');
-    const users = database.collection('users');
-    const query = { username: 'admin' };
-    const user = await users.findOne(query);
-    console.log(user);
-  } finally {
-    await client.close();
-  }
-}
-
-run().catch(console.dir);
-
-app.post("/login",(req,res) => {
-  async function loginUser()
-  {
-    await client.connect();
-    const database = client.db('webproject');
-    const users = database.collection('users');
-    const query = { username: req.body.username };
-    const user = await users.findOne(query);
-
-    if (user != null && req.body.password == user.password) {
-      if (req.body.username == 'admin')
-        return res.redirect("/adminpanel.html");
+app.post("/login", async (req, res) => {
+  const query = { username: req.body.username };
+  const user = await UserModel.findOne(query);
+  //console.log(user);
+  if (user != null && req.body.password == user.password) {
+    if (user.type == "admin") {
+      res.redirect("/adminpanel.html");
+    } else {
       return res.redirect("/userpanel.html");
     }
-    else return res.redirect("/login.html");
-    
-/*
-    if (user != null && req.body.password == user.password && req.body.type=="admin") 
-        return res.redirect("/adminpanel.html");
-    else if (user != null && req.body.password == user.password && req.body.type=="user")
-      return res.redirect("/userpanel.html");
-    else return res.redirect("/login.html");
-*/
-    /*
-    if(user != null && req.body.type == 'admin') 
-      return res.redirect("/adminpanel.html");
-    else if (user != null && req.body.password == user.password) 
-      return res.redirect("/userpanel.html");
-    return res.redirect("/login.html");
-    */
-
-  //  if(user != null && req.body.password == user.password) 
-   //  return res.redirect("/adminpanel.html");
- //  return res.redirect("/login.html"); 
+  } else {
+    res.redirect("/login.html");
   }
-  loginUser();
-})
+});
 
 /*
 app.get('/', (req, res) => {
@@ -73,23 +36,46 @@ app.get('/', (req, res) => {
 */
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+  console.log(`Example app listening on port ${port}`);
+});
 
-app.get('/getProduct', (req, res) => {
+app.get("/getProduct", async (req, res) => {
+  const products = await ProductModel.find();
+  res.send(products);
+});
 
-  async function myProduct() {
-    await webproject.getProductsCollection().then((result) => { res.send(result)});
+app.post("/newProduct", async (req, res) => {
+  const product = req.body;
+  console.log(product);
+  const newProduct = await ProductModel.create(product);
+  res.redirect("/adminpanel.html");
+});
+
+app.get("/getUser", async (req, res) => {
+  const users = await UserModel.find();
+  res.send(users);
+});
+
+app.get("/update-quantity/:productId/:newQuantity", async (req, res) => {
+  const { productId, newQuantity } = req.params;
+  await ProductModel.findByIdAndUpdate(productId, { quantity: newQuantity });
+  res.status(200).send();
+});
+
+(async function () {
+  try {
+    await mongoose.connect(uri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      dbName: "webproject",
+    });
+    console.log("Connected to mongo db");
+    // const database = client.db("webproject");
+    // const users = database.collection("users");
+    // const query = { username: "admin" };
+    // const user = await users.findOne(query);
+    // console.log(user);
+  } catch (err) {
+    console.log("error connection to db " + err);
   }
-  myProduct();
-})
-
-app.get('/getUser', (req, res) => {
-
-  async function myUser() {
-    await webproject.getUsersCollection().then((result) => { res.send(result)});
-  }
-  myUser();
-})
-
-
+})();
