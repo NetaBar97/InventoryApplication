@@ -56,6 +56,13 @@ app.get("/getUser", async (req, res) => {
   res.send(users);
 });
 
+app.post("/newUser", async (req, res) => {
+  const user = req.body;
+  console.log(user);
+  const newUser = await UserModel.create(user);
+  res.redirect("/permissions.html");
+});
+
 app.get("/update-quantity/:productId/:newQuantity", async (req, res) => {
   const { productId, newQuantity } = req.params;
   await ProductModel.findByIdAndUpdate(productId, { quantity: newQuantity });

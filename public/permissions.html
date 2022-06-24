@@ -1,81 +1,116 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <!--  Website template by freewebsitetemplates.com  -->
 <html>
+  <head>
+    <script
+      src="https://kit.fontawesome.com/0724588e9e.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora&display=swap"
+      rel="stylesheet"
+    />
+    <title>Pet Shop</title>
+    <meta charset="iso-8859-1" />
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
 
-<head>
-	<script src="https://kit.fontawesome.com/0724588e9e.js" crossorigin="anonymous"></script>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Sora&display=swap" rel="stylesheet">
-	<title>Pet Shop</title>
-	<meta  charset="iso-8859-1" />
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
-
-	<script>
-        function showTable() {
-            fetch('/getUser')
-                .then(response => response.text())
-                .then(data => {
-                    var userTypes = JSON.parse(data);
-                    var myTables = `<table class="styled-table">
+    <script>
+      function showTable() {
+        fetch("/getUser")
+          .then((response) => response.text())
+          .then((data) => {
+            var userTypes = JSON.parse(data);
+            var myTables = `<table class="styled-table">
                                 <tr>
                                     <th>Username</th>
 									<th>Type</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>`;
-                    userTypes.forEach(element => {
-
-                        myTables += `
+            userTypes.forEach((element) => {
+              myTables += `
                                 <tr>
                                     <td>${element.username}</td>
                                     <td>${element.type}</td>
                                     <td><div userId='${element._id}'><i style="cursor:pointer;" class="fa fa-light fa-pen"></i></div></td>
                                     <td><div userId='${element._id}'><i style="cursor:pointer;" <i class="fa-solid fa-trash-can"></i></div></td>
                                 </tr>
-                            `
-                    });
-					myTables+=`</table>`;
-                    document.getElementById("myData").innerHTML = myTables;
-					
-                }
-                )
-        }
-		</script>
+                            `;
+            });
+            myTables += `</table>`;
+            document.getElementById("myData").innerHTML = myTables;
+          });
+      }
+    </script>
 
-	<!--[if IE 6]>
-		<link href="css/ie6.css" rel="stylesheet" type="text/css" />
-	<![endif]-->
-	<!--[if IE 7]>
-        <link href="css/ie7.css" rel="stylesheet" type="text/css" />  
-	<![endif]-->
-</head>
+    <!--[if IE 6]>
+      <link href="css/ie6.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+    <!--[if IE 7]>
+      <link href="css/ie7.css" rel="stylesheet" type="text/css" />
+    <![endif]-->
+  </head>
 
-<body onload="showTable()">
+  <body onload="showTable()">
+    <div id="header">
+      <a href="index.html" id="logo"
+        ><img src="images/logo.gif" width="310" height="114" alt="" title=""
+      /></a>
+    </div>
+    <br /><br /><br />
+    <div id="adminButtons">
+      <div id="addUser" class="button-4" role="button" class="adminButton">Add User</div>
 
-	
-			<div id="header">
-	           		<a href="index.html" id="logo"><img src="images/logo.gif" width="310" height="114" alt="" title=""></a>
-			</div>
-			<br><br><br>
-			<div id="adminButtons">
+      <a href="adminpanel.html">
+        <div class="button-4" role="button" class="adminButton">
+          Back to Inventory
+        </div>
+      </a>
+    </div>
+    <div id="myData"></div>
 
-                <div  class="button-4" role="button" class="adminButton">
-					Add User
-				</div>
+    <!-- The Modal -->
+    <div id="addUserModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p style="text-align: center">Add User</p>
+        <form id="new-user" method="post" action="/newUser">
+          <div class="group">
+            <input name="username" type="text" required />
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Username</label>
+          </div>
 
-                <a href="adminpanel.html">
-				<div  class="button-4" role="button" class="adminButton">
-					Back to Inventory
-				</div>
-                </a>
+          <div class="group">
+            <input name="password" type="text" required />
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Password</label>
+          </div>
 
-              
+          <div class="group">
+            <label>User Type</label><br /><br />
+            <select
+              style="font-family: sora; font-size: 14px"
+              name="type"
+              id="type"
+              form="new-user"
+            >
+              <option value="admin" selected="selected">admin</option>
+              <option value="user" selected="selected">user</option>
+            </select>
+          </div>
+          <button type="submit" class="button-4 adminButton" role="button">
+            Add
+          </button>
+        </form>
+      </div>
+    </div>
 
-			
-			</div>
-			<div id="myData"></div>
-		
-</body>
-
+    <script src="userModal.js" defer></script>
+  </body>
 </html>
