@@ -26,11 +26,36 @@ filterNowBtn.addEventListener("click", () => {
     element.style.display = "table-row";
   });
   if (category == "all") {
+    showAll();
     return;
   }
+
+  if (category == "missing") {
+    missingFilter();
+    return;
+  }
+
   document.querySelectorAll("tbody tr").forEach((element) => {
     if (element.getAttribute("category") != category) {
       element.style.display = "none";
     }
   });
 });
+
+function missingFilter() {
+  showAll();
+
+  document.querySelectorAll("tbody tr").forEach((element) => {
+    const rowQuantity = element.getAttribute("quantity");
+    const rowMinQuantity = element.getAttribute("min-quantity");
+    if (Number(rowQuantity) >= Number(rowMinQuantity)) {
+      element.style.display = "none";
+    }
+  });
+}
+
+function showAll() {
+  document.querySelectorAll("tbody tr").forEach((element) => {
+    element.style.display = "table-row";
+  });
+}

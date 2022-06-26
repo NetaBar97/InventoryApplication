@@ -25,7 +25,7 @@
             var myTables = "";
             productTypes.forEach((product) => {
               myTables += `
-                                   <tr category="${product.category}" quantity="${product.quantity}">
+                                   <tr category="${product.category}" quantity="${product.quantity}" min-quantity="${product.minQuantity}">
                                        <td>${product.name}</td>
                                        <td>${product.price}</td>
       						<td>${product.quantity}</td>
@@ -187,12 +187,10 @@
             <option value="Beds" selected="selected">Beds</option>
             <option value="Food" selected="selected">Food</option>
             <option value="Grooming" selected="selected">Grooming</option>
+            <option value="Missing" selected="selected">Missing</option>
             <option value="all" selected="selected">Show All</option>
           </select>
         </div>
-
-        <input style="margin-left: -125px" type="checkbox" />
-        <p>Show Missing Products</p>
 
         <div id="filter-now" class="button-4" role="button" class="adminButton">
           Filter
