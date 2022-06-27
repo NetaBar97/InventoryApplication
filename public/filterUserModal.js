@@ -5,7 +5,7 @@ var filterUserBtn = document.getElementById("filterBtn");
 var span = document.getElementsByClassName("close")[0];
 
 filterUserBtn.onclick = function () {
-  filterUserModal.style.display = "block";
+  filterUserModal.style.display = "flex";
 };
 
 span.onclick = function () {
@@ -21,6 +21,8 @@ window.onclick = function (event) {
 var filterNowBtn = document.getElementById("filter-now");
 
 filterNowBtn.addEventListener("click", () => {
+  filterModal.style.display = "none";
+
   const category = document.getElementById("category-filter").value;
   document.querySelectorAll("tbody tr").forEach((element) => {
     element.style.display = "table-row";

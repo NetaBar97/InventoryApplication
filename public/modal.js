@@ -7,17 +7,11 @@ var btn = document.getElementById("addBtn");
 var filterBtn = document.getElementById("filterBtn");
 
 var filterNowBtn = document.getElementById("filter-now");
-var missingBtn = document.getElementById("missing-filter");
 
 filterNowBtn.addEventListener("click", () => {
-  const category = document.getElementById("category-filter").value;
-  /*
-  if (document.getElementById("missing-filter").checked == true) {
-    alert("hkdfhjdkfhdkjhfjk");
-  } else {
-    return;
-  }*/
+  filterModal.style.display = "none";
 
+  const category = document.getElementById("category-filter").value;
   document.querySelectorAll("tbody tr").forEach((element) => {
     element.style.display = "table-row";
   });
@@ -26,34 +20,10 @@ filterNowBtn.addEventListener("click", () => {
     return;
   }
 
-  if (category == "Missing") {
+  if (category == "missing") {
     missingFilter();
     return;
   }
-
-  // if (category == "Missing") {
-  //   document.querySelectorAll("tbody tr").forEach((element) => {
-  //     const prodMinQuantity = element.querySelector("#prodMinQuantity").innerText,
-  //           prodQuantity = element.querySelector("#prodQuantity").innerText;
-  //     alert(prodMinQuantity);
-  //     alert(prodQuantity);
-  //     if (prodMinQuantity > prodQuantity) {
-  //       alert("fgfgfg");
-  //       element.style.display = "none";
-  //     }
-  //
-  /*
-  if (category == "Missing") {
-    document.querySelectorAll("tbody tr").forEach((element) => {
-      const prodMinQuantity =
-          ~~element.querySelector("#prodMinQuantity").innerText,
-        prodQuantity = ~~element.querySelector("#prodQuantity").innerText;
-      if (prodMinQuantity > prodQuantity) {
-        alert("fgfgfg");
-        element.style.display = "none";
-      }
-    });
-  }*/
 
   document.querySelectorAll("tbody tr").forEach((element) => {
     if (element.getAttribute("category") != category) {
@@ -62,7 +32,6 @@ filterNowBtn.addEventListener("click", () => {
   });
 });
 
-/******ADDITION********/
 function missingFilter() {
   showAll();
 
@@ -80,23 +49,29 @@ function showAll() {
     element.style.display = "table-row";
   });
 }
-/************ADDITION***************/
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
+var spanFilter = document.getElementsByClassName("close")[1];
 
 // When the user clicks on the button, open the modal
 btn.onclick = function () {
-  newProductModal.style.display = "block";
+  newProductModal.style.display = "flex";
+  document.body.style.overflow = "hidden";
 };
+
 filterBtn.onclick = function () {
   console.log("filter btn");
-  filterModal.style.display = "block";
+  filterModal.style.display = "flex";
 };
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
   newProductModal.style.display = "none";
+  document.body.style.overflow = "auto";
+};
+
+spanFilter.onclick = function () {
   filterModal.style.display = "none";
 };
 
@@ -104,6 +79,7 @@ span.onclick = function () {
 window.onclick = function (event) {
   if (event.target == newProductModal) {
     newProductModal.style.display = "none";
+    document.body.style.overflow = "auto";
   }
   if (event.target == filterModal) {
     filterModal.style.display = "none";

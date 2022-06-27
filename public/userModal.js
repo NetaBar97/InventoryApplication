@@ -5,7 +5,7 @@ var btn = document.getElementById("addUser");
 var span = document.getElementsByClassName("close")[0];
 
 btn.onclick = function () {
-  newUserModal.style.display = "block";
+  newUserModal.style.display = "flex";
 };
 
 span.onclick = function () {

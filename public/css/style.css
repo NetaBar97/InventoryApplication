@@ -384,7 +384,7 @@ body {
 }
 
 #body #content .content .about h2 {
-  margin: 80px 0 0 30px;
+  margin: 29px 0 0 30px;
 
   font-family: sora;
 }
@@ -1236,9 +1236,9 @@ h2 {
 }
 
 .styled-table thead tr {
-  background-color: #009879;
+  background-color: #91a0b3;
   color: #ffffff;
-  text-align: left;
+  text-align: center;
 }
 
 .styled-table th,
@@ -1273,7 +1273,7 @@ h2 {
 }
 
 #adminButtons {
-  width: 40%;
+  width: 30%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1381,7 +1381,7 @@ h2 {
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  overflow: none; /* Enable scroll if needed */
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
@@ -1389,7 +1389,7 @@ h2 {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto;
+  margin: auto;
   padding: 20px;
   border: 1px solid #888;
   width: 30%;
@@ -1404,8 +1404,6 @@ h2 {
   font-weight: bold;
 }
 
-
-
 .close:hover,
 .close:focus {
   color: black;
@@ -1413,9 +1411,7 @@ h2 {
   cursor: pointer;
 }
 
-
 .group {
-  position: relative;
   margin-bottom: 20px;
 }
 
@@ -1423,7 +1419,7 @@ input {
   font-size: 16px;
   padding: 10px 10px 3px 5px;
   display: block;
-  width: 270px;
+  width: calc(100% - 20px);
   border: none;
   border-bottom: 1px solid #757575;
 }
@@ -1436,10 +1432,7 @@ label {
   color: #999;
   font-size: 14px;
   font-weight: normal;
-  position: absolute;
   pointer-events: none;
-  left: 5px;
-  top: 10px;
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -1451,4 +1444,18 @@ input:valid ~ label {
   top: -6px;
   font-size: 14px;
   color: #5264ae;
+}
+
+#category {
+  font-family: sora;
+  font-size: 14px;
+  border-radius: 7px;
+  text-align: center;
+  margin-left: 23px;
+}
+
+#category-filter {
+  font-family: sora;
+  font-size: 14px;
+  border-radius: 7px;
 }
