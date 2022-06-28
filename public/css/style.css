@@ -411,10 +411,10 @@ body {
   font-family: sora;
   text-decoration: none;
 }
-
+/*
 #body #content .content .about ul li h2 a:hover {
   color: #7f7154;
-}
+}*/
 
 #body #content .content .about ul li p {
   color: #7f7154;
@@ -1255,7 +1255,7 @@ h2 {
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #91a0b3;
 }
 
 .styled-table tbody tr.active-row {
@@ -1458,4 +1458,9 @@ input:valid ~ label {
   font-family: sora;
   font-size: 14px;
   border-radius: 7px;
+}
+
+.socialmedia {
+  cursor: pointer;
+  color: grey;
 }

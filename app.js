@@ -29,12 +29,6 @@ app.post("/login", async (req, res) => {
   }
 });
 
-/*
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-*/
-
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });
@@ -89,11 +83,6 @@ app.get("/update-permission/:userId/:newPermission", async (req, res) => {
       dbName: "webproject",
     });
     console.log("Connected to mongo db");
-    // const database = client.db("webproject");
-    // const users = database.collection("users");
-    // const query = { username: "admin" };
-    // const user = await users.findOne(query);
-    // console.log(user);
   } catch (err) {
     console.log("error connection to db " + err);
   }

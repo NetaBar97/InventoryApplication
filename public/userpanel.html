@@ -41,48 +41,8 @@
 
             document.querySelector("tbody").innerHTML = myTables;
           });
-        /*
-        fetch("/getProduct")
-          .then((response) => response.text())
-          .then((data) => {
-            var productTypes = JSON.parse(data);
-            var myTables = `<table class="styled-table">
-                                <tr>
-                                    <th>Product Name</th>
-                                    <th>Price</th>
-									<th>Quantity</th>
-									<th>Minimum Quantity</th>
-									<th>Category</th>
-									<th>Image</th>
-									<th>Edit</th>
-                                </tr>`;
-            productTypes.forEach((element) => {
-              myTables += `
-                                <tr>
-                                    <td>${element.name}</td>
-                                    <td>${element.price}</td>
-									<td>${element.quantity}</td>
-									<td>${element.minQuantity}</td>
-									<td>${element.category}</td>
-                                    <td>
-                                        <img src="${element.img}" alt="${element.image}" width="150" height="120">      
-                                    </td>
-									<td><div productId='${element._id}'><i style="cursor:pointer;" class="fa fa-light fa-pen"></i></div></td>
-                                </tr>
-                            `;
-            });
-            myTables += `</table>`;
-            document.getElementById("myData").innerHTML = myTables;
-          });*/
       }
     </script>
-
-    <!--[if IE 6]>
-      <link href="css/ie6.css" rel="stylesheet" type="text/css" />
-    <![endif]-->
-    <!--[if IE 7]>
-      <link href="css/ie7.css" rel="stylesheet" type="text/css" />
-    <![endif]-->
   </head>
 
   <body onload="showTable()">
