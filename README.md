@@ -3,7 +3,7 @@ The goal of our project is to create a comfortable GUI for inventory management 
 
 There are two user types - admin and user.
 Login Page:
-![image](https://user-images.githubusercontent.com/105801035/176411348-73b3e9d8-e8ca-43c4-97ba-83891bd540a0.png)
+![image](https://user-images.githubusercontent.com/105801035/176411348-73b3e9d8-e8ca-43c4-97ba-83891bd540a0.png|width=10px)
 
 Our inventory management system allows the administrator to add products, edit their details, and filter them by category. 
 Admins GUI:
