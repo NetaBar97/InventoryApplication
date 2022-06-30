@@ -5,7 +5,7 @@ The goal of our project is to create a comfortable GUI for inventory management 
 Login Page: <br><br>
 <img src="https://user-images.githubusercontent.com/105801035/176411348-73b3e9d8-e8ca-43c4-97ba-83891bd540a0.png" width="400" height="300"/>
 
-* Our inventory management system allows the administrator to add products, edit their details, and filter them by category. 
+* Our inventory management system allows the administrator to add products, edit their quantities, and filter them by category (including category of missing products). 
 Admins GUI: <br><br>
 <img src="https://user-images.githubusercontent.com/105801035/176411504-41abb69a-7871-4334-bc03-8173085be05c.png" width="400" height="300"/>
 
@@ -23,6 +23,10 @@ Products - name, price, quantity, minimum quantity, category, image. <br>
 Users - username, password, type. <br>
 <img src="https://user-images.githubusercontent.com/105801035/176414844-9f789ced-9e67-49c4-92e7-60fb7fd2ab3c.png" width="400" height="300"/>
 
+* Our MVC: <br>
+Model: MongoDB based database located in the cloud. <br>
+Viewer: The display on the site is based on static HTML pages and CSS that are in the public folder. <br>
+Controller: The server that connects between them using Fetch calls. <br>
 
 
 * Our initial project vision:
