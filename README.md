@@ -17,9 +17,9 @@ Users GUI:
 <img src="https://user-images.githubusercontent.com/105801035/176411611-02be88bf-2542-4b38-8770-3f6cb528d128.png" width="400" height="300"/>
 <br>
 
-* In order to build the system, we created a database in Mongo DB that contained the products list and the details of the users. We connected our website to the Mongo DB server in order to save and update the changes that the admin performs in the system.
-The data that was kept was:
-Products - name, price, quantity, minimum quantity, category, image.
+* In order to build the system, we created a database in Mongo DB that contained the products list and the details of the users. We connected our website to the Mongo DB server in order to save and update the changes that the admin performs in the system. <br>
+The data that was kept was: <br>
+Products - name, price, quantity, minimum quantity, category, image. <br>
 Users - username, password, type. <br>
 <img src="https://user-images.githubusercontent.com/105801035/176414844-9f789ced-9e67-49c4-92e7-60fb7fd2ab3c.png" width="400" height="300"/>
 
